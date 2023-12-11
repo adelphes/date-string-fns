@@ -151,7 +151,7 @@ export function addDate(
  * Convert a local `Date` value into a ISO8601 date string
  */
 export function fromLocalDate(d: Date): string {
-  return buildIsoDateString(d.getDay(), d.getMonth() + 1, d.getFullYear());
+  return buildIsoDateString(d.getDate(), d.getMonth() + 1, d.getFullYear());
 }
 
 /**
@@ -159,7 +159,7 @@ export function fromLocalDate(d: Date): string {
  */
 export function fromUTCDate(d: Date): string {
   return buildIsoDateString(
-    d.getUTCDay(),
+    d.getUTCDate(),
     d.getUTCMonth() + 1,
     d.getUTCFullYear()
   );
