@@ -1,0 +1,22 @@
+{
+  "name": "date-string-fns",
+  "version": "1.0.0",
+  "description": "A set of functions for handling ISO-8601 date strings",
+  "author": "adelphes",
+  "license": "MIT",
+  "repository": "adelphes/date-string-fns",
+  "keywords": [
+    "date",
+    "date-fns",
+    "iso",
+    "iso8601"
+  ],
+  "engines": {
+    "node": ">= 8.0.0"
+  },
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "devDependencies": {
+    "typescript": "5.3.3"
+  }
+}
