@@ -1,10 +1,13 @@
 {
   "name": "date-string-fns",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A set of functions for handling ISO-8601 date strings",
   "author": "adelphes",
   "license": "MIT",
-  "repository": "adelphes/date-string-fns",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adelphes/date-string-fns.git"
+  },
   "keywords": [
     "date",
     "date-fns",
@@ -18,5 +21,13 @@
   "types": "lib/index.d.ts",
   "devDependencies": {
     "typescript": "5.3.3"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/adelphes/date-string-fns/issues"
+  },
+  "homepage": "https://github.com/adelphes/date-string-fns#readme",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {}
 }
