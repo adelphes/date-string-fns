@@ -84,3 +84,31 @@ import { toDMY } from 'date-string-fns';
 
 const { day, month, year } = toDMY('2013-04-26'); // { day: 26, month: 4, year: 2013 }
 ```
+
+Adding / subtracting dates
+
+```ts
+import { addDate } from 'date-string-fns';
+
+const oneMonthLater = addDate('2023-02-14', { months: 1 });
+console.log(oneMonthLater); // '2023-03-14'
+
+const eightySixDaysEarlier = addDate('2023-02-14', { days: -86 });
+console.log(eightySixDaysEarlier); // '2022-11-20'
+
+const oneDayTwoMonthsAndThreeYearsLater = addDate('2023-02-14', {
+  days: 1,
+  months: 2,
+  years: 3,
+});
+console.log(oneDayTwoMonthsAndThreeYearsLater); // '2026-03-02'
+
+const lastDayOf2023 = addDate('2023-01-01', { years: 1, days: -1 });
+console.log(lastDayOf2023); // '2023-12-31'
+
+// note that when incrementing by months, the day is altered to suit the resulting month:
+// - if the date passed in is the last day of the month, the result will also have the last day of the month
+// - otherwise the date is the closest valid date for the resulting month
+const jan31stPlusOneMonth = addDate('2023-01-31', { months: 1 });
+console.log(jan31stPlusOneMonth); // '2023-02-28'
+```
