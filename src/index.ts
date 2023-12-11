@@ -180,8 +180,18 @@ function toDate(
     millis = Math.trunc((s - seconds) * 1000);
   }
   return type === 'local'
-    ? new Date(year, month - 1, day, h, m, seconds, millis)
-    : new Date(Date.UTC(year, month - 1, day, h, m, seconds, millis));
+    ? new Date(year, month - 1, day, h ?? 0, m ?? 0, seconds ?? 0, millis ?? 0)
+    : new Date(
+        Date.UTC(
+          year,
+          month - 1,
+          day,
+          h ?? 0,
+          m ?? 0,
+          seconds ?? 0,
+          millis ?? 0
+        )
+      );
 }
 
 /**
