@@ -103,10 +103,16 @@ export function addDate(
   };
 
   if (typeof increment.years === 'number') {
+    if (!Number.isSafeInteger(increment.years)) {
+      throw new Error('addDate: years increment must be an integer value');
+    }
     year += increment.years;
   }
 
   if (typeof increment.months === 'number') {
+    if (!Number.isSafeInteger(increment.months)) {
+      throw new Error('addDate: months increment must be an integer value');
+    }
     const yearsFromMonths = Math.trunc(increment.months / 12);
     year += yearsFromMonths;
     month += increment.months - yearsFromMonths * 12;
@@ -120,6 +126,9 @@ export function addDate(
   }
 
   if (typeof increment.days === 'number') {
+    if (!Number.isSafeInteger(increment.days)) {
+      throw new Error('addDate: days increment must be an integer value');
+    }
     day += increment.days;
     while (day < 1) {
       month -= 1;
